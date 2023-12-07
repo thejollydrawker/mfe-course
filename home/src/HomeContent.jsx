@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { getProducts, currency } from "./products";
 
@@ -16,10 +17,12 @@ export default function HomeContent() {
     <div className="my-10 grid grid-cols-4 gap-5">
         {products.map((product) => (
             <div key={product.id}>
-                <img className="object-cover h-60 w-full" src={product.image} alt={product.name} />
+                <Link to={`/product/${product.id}`}>
+                    <img className="object-cover h-60 w-full" src={product.image} alt={product.name} />
+                </Link>
                 <div className="flex">
                     <div className="flex-grow font-bold">
-                        <a href="">{product.name}</a>
+                        <Link to={`/product/${product.id}`}>{product.name}</Link>
                     </div>
                     <div className="flex-end">{currency.format(product.price)}</div>
                 </div>

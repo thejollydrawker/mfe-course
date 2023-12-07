@@ -9,7 +9,6 @@ export default function CartContent() {
 
     useEffect(() => {
         cart.subscribe(value => setItems(value?.cartItems ?? []));
-        return () => cart.unsubscribe();
     }, []);
 
     return (

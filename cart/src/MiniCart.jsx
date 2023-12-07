@@ -3,8 +3,10 @@ import React, {useEffect, useState} from "react";
 
 import { cart, clearCart } from "./cart";
 import { currency } from "home/products";
+import { Link } from "react-router-dom";
 
-export default function MiniCart() {
+
+export default function MiniCart({link}) {
     const [items, setItems] = useState(undefined);
     const [showCart, setShowCart] = useState(false);
 
@@ -19,10 +21,13 @@ export default function MiniCart() {
     if (!items) return null;
 
     return (<>
-        <span onClick={() => setShowCart(!showCart)} id="showcart">
-            <i className="ri-shopping-cart-2-fill text-2xl" id="showcart-icon"></i>
-            {items.length}
-        </span>
+    <div onMouseEnter={() => setShowCart(true)} onMouseLeave={() => setShowCart(false)}>
+        <Link to={link}>
+            <span id="showcart">
+                <i className="ri-shopping-cart-2-fill text-2xl" id="showcart-icon"></i>
+                {items.length}
+            </span>
+        </Link>
         { showCart && (<>
             <div 
                 className="absolute bg-white p-5 border-4 border-blue-800 text-black"
@@ -74,5 +79,6 @@ export default function MiniCart() {
                 </div>
             </div>
         </>)}
+    </div>
     </>);
 }
