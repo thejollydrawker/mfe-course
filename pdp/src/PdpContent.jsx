@@ -38,8 +38,8 @@ export default function PdpContent() {
                     {currency.format(product.price)}
                 </div>
             </div>
-            <div ref={addToCart}></div>
-            <div className="mt-10">
+            <div className="flex justify-end mt-2" ref={addToCart}></div>
+            <div className="mt-8">
                 {product.description}
             </div>
             <div className="mt-2 whitespace-pre-line">
