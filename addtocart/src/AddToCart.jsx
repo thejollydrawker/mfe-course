@@ -15,7 +15,7 @@ export default ({id}) => {
         <Show when={loggedIn()}>
             <button 
                 onClick={() => addToCart(id)}
-                className="bg-red-900 text-white rounded-md py-2 px-5 text-sm"
+                className="bg-blue-500 text-white rounded-md py-2 px-5 text-sm transform transition hover:scale-125 duration-300 ease-in"
             >
                 Add to cart
             </button>

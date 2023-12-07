@@ -17,13 +17,15 @@ export default function Login() {
         </span>
         { showLogin && (
             <div 
-                className="absolute bg-white text-black p-5 border-4 border-blue-800"
+                className="absolute bg-white text-gray-900 p-5 border-2 border-gray-900"
                 style={{
                     width: 300,
                     top: "2rem",
-                    left: -250
+                    left: -275
                 }}
             >
+                <h3 className="text-sm font-semibold">Account login</h3>
+                <label className="text-sm text-gray-600">username</label>
                 <input 
                     type="text" 
                     placeholder="Username"
@@ -31,19 +33,21 @@ export default function Login() {
                     onChange={(event) => setUsername(event.target.value)}
                     className="border text-sm border-gray-400 p-2 rounded-md w-full"
                 />
+                <label className="text-sm text-gray-600">password</label>
                 <input 
                     type="password" 
                     value={password}
                     onChange={(event) => setPassword(event.target.value)}
                     className="border text-sm border-gray-400 p-2 rounded-md w-full"
                 />
-                <button 
-                    className="bg-green-900 text-white text-sm py-2 px-5 rounded-md"
-                    onClick={() => login(username, password)}
-                    id="login-btn"
-                >
-                    Login
-                </button>
+                <div className="flex justify-end">
+                    <button 
+                        className="bg-blue-900 text-white mt-4 text-sm py-2 px-5 rounded-md"
+                        onClick={() => login(username, password)}
+                        id="login-btn">
+                        Login
+                    </button>
+                </div>
             </div>
         )}
     </>);

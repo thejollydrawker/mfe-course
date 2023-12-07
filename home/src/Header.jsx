@@ -6,9 +6,9 @@ import MiniCart from "cart/MiniCart";
 import Login from "cart/Login";
 
 export default function Header() {
-    return <div className="p-5 bg-blue-500 text-white text-3xl font-bold">
+    return <div className="p-5 pb-0 border-b-4 text-3xl font-bold text-gray-900">
         <div className="flex">
-            <div className="flex-grow">
+            <div className="flex-grow align-baseline">
                 <Link to="/">
                     TJD Prints
                 </Link>

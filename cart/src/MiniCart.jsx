@@ -30,7 +30,7 @@ export default function MiniCart({link}) {
         </Link>
         { showCart && (<>
             <div 
-                className="absolute bg-white p-5 border-4 border-blue-800 text-black"
+                className="absolute bg-white text-gray-900 p-5 border-2 border-gray-900"
                 style={{
                     width: 300,
                     top: "2rem",
@@ -57,7 +57,7 @@ export default function MiniCart({link}) {
                         {currency.format(items.reduce((a,v) => a + v.quantity * v.price, 0))}
                     </div>
                 </div>
-                <div className="flex">
+                <div className="flex mt-4">
                     <div className="flex-grow">
                         <button 
                         id="clear-btn"

@@ -27,10 +27,8 @@ export default function PdpContent() {
     if (!product) return null;
 
     return (
-    <div className="my-4 grid grid-cols-2 gap-5">
-        <div className="">
-            <img src={product.image} alt={product.name} />
-        </div>
+    <div className="m-4 max-w-6xl mx-auto">
+            <img src={product.image} alt={product.name} className="float-left shadow-lg h-80 w-1/3 mr-4 mb-8"/>
         <div>
             <div className="flex">
                 <div className="font-bold text-3xl flex-grow">
@@ -42,11 +40,11 @@ export default function PdpContent() {
             </div>
             <div ref={addToCart}></div>
             <div className="mt-10">
-                    {product.description}
-                </div>
-                <div className="mt-2">
-                    {product.longDescription}
-                </div>
+                {product.description}
+            </div>
+            <div className="mt-2 whitespace-pre-line">
+                {product.longDescription}
+            </div>
         </div>
     </div>
     )

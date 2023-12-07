@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import "./index.scss";
@@ -14,16 +13,16 @@ import "remixicon/fonts/remixicon.css";
 
 export default function MainLayout () {
     return (
-    <Router>
-        <div className="mt-10 text-3xl mx-auto max-w-6xl">
-        <Header />
-        <Routes>
-            <Route exact path="/" element={<HomeContent />}/>
-            <Route path="/product/:id" element={<PdpContent />}/>
-            <Route path="/cart" element={<CartContent />}/>
-        </Routes>
-        <Footer />
+        <div className="bg-gray-50 pb-24 min-h-screen">
+            <Router>
+                <Header />
+                <Routes>
+                    <Route exact path="/" element={<HomeContent />}/>
+                    <Route path="/product/:id" element={<PdpContent />}/>
+                    <Route path="/cart" element={<CartContent />}/>
+                </Routes>
+                <Footer />
+            </Router>
         </div>
-    </Router>
     )
 }

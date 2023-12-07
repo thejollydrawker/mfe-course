@@ -14,11 +14,11 @@ export default function HomeContent() {
     }, []);
 
     return (
-    <div className="my-10 grid grid-cols-4 gap-5">
+    <div className="my-10 grid grid-cols-4 gap-5 max-w-6xl mx-auto">
         {products.map((product) => (
             <div key={product.id}>
                 <Link to={`/product/${product.id}`}>
-                    <img className="object-cover h-60 w-full" src={product.image} alt={product.name} />
+                    <img className="fade-in object-cover h-60 w-full hover:shadow-xl hover:shadow-blue-500/50" src={product.image} alt={product.name} />
                 </Link>
                 <div className="flex">
                     <div className="flex-grow font-bold">
@@ -32,7 +32,7 @@ export default function HomeContent() {
                         <button 
                             onClick={() => addToCart(product.id)}
                             id={`addtocart_${product.id}`}
-                            className="bg-blue-500 px-5 py-2 text-sm hover:bg-blue-700 text-white rounded-md"
+                            className="bg-blue-500 px-5 py-2 text-sm hover:bg-blue-700 text-white rounded-md transform transition hover:scale-125 duration-300 ease-in"
                         >
                             Add to cart
                         </button>
